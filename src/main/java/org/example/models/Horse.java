@@ -1,7 +1,7 @@
 package org.example.models;
 // Inheritance
 public class Horse extends Animal {
-    public Horse(Integer age, String name, Integer legs) {
+    public Horse(Integer age, String name, Integer legs) throws Exception {
         super(age, name, legs);
     }
 

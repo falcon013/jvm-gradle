@@ -1,7 +1,7 @@
 package org.example.models;
 
 public class Cat extends Animal {
-    public Cat(Integer age, String name, Integer legs) {
+    public Cat(Integer age, String name, Integer legs) throws Exception {
         super(age, name, legs);
     }
 

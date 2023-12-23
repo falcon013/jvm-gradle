@@ -12,10 +12,11 @@ public class Animal {
 
     public String xxx;
 
-    public Animal(Integer ageOfAnimal, String name, Integer legsOfAnimal) {
-        this.age = ageOfAnimal;
+    public Animal(Integer ageOfAnimal, String name, Integer legsOfAnimal) throws Exception {
+        // this.age = ageOfAnimal;
         this.name = name;
         this.legs = legsOfAnimal;
+        this.setAge(ageOfAnimal);
 
         UpdateYoB(age);
     }
@@ -24,9 +25,12 @@ public class Animal {
         return age;
     }
 // logic of setting age encapsulated here in class and change this logic we can only via setter or in constructor
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAge(Integer age) throws Exception {
+        if (age < 0) {
+            throw new Exception("Invalid value. Age should be a positive number");
+        }
 
+        this.age = age;
         UpdateYoB(age);
     }
 
@@ -44,5 +48,10 @@ public class Animal {
 
     public void sayAnimal() {
         System.out.println("This animal is " + this.name);
+    }
+
+    public static void main(String[] args) throws Exception {
+        Animal m2 = new Animal(2,"horse", 4);
+        System.out.println(m2.age);
     }
 }

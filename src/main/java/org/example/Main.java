@@ -11,17 +11,19 @@ import org.example.models.Cat;
 import org.example.models.Horse;
 
 public class Main {
-
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) throws Exception {
         Animal myAnimal = new Animal(15, "Vasya", 4);
+
         myAnimal.name = "Kitty";
         myAnimal.legs = 8;
         System.out.println(myAnimal.xxx);
         System.out.printf("My animal age is: %s and name: %s and legs: %s\n", myAnimal.getAge(), myAnimal.name, myAnimal.legs);
 // Inheritance all features from Animal goes to Horse, Dog...
         Horse h = new Horse(43,"Mary", 4);
+
 // Encapsulation (get set methods to change values), inheritance
         Cat c =  new Cat(22, "Musya", 4);
+        
 
         System.out.println(c.getYearOfBirth()); // 2000
         c.setAge(43);
@@ -109,6 +111,9 @@ public class Main {
         j++; // will not affect i
 
         System.out.printf("value of i and j after modification i: %d, j: %d %n", i, j); //value of i and j after modification i: 20, j: 21
+
+        Matrix m1 = new Matrix(8);
+        System.out.println(m1.getAt(1,1));
 
 
     }
